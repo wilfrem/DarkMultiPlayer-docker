@@ -23,6 +23,6 @@ done
 UniverseFolder=$VOLUME/Universe
 LogsFolder=$VOLUME/logs
 #run docker container
-sudo docker run -p 6702:6702 -v $UniverseFolder:/home/kerman/DMPServerApp/Universe -v $LogsFolder:/home/kerman/DMPServer/logs -i -t $TAG
+sudo docker run -p 6702:6702 -v $UniverseFolder:/home/kerman/DMPServerApp/Universe -v $LogsFolder:/home/kerman/DMPServer/logs -t $TAG
 
 
