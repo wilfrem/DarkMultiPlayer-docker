@@ -258,4 +258,23 @@ wingConnector3
 wingConnector4
 wingConnector5
 wingStrake
+adapterMk3-Mk2
+adapterMk3-Size2
+adapterMk3-Size2Slant
+adapterSize2-Mk2
+adapterSize2-Size1
+adapterSize2-Size1Slant
+adapterSize3-Mk3
+mk3CargoBayL
+mk3CargoBayM
+mk3CargoBayS
+mk3Cockpit.Shuttle
+mk3CrewCabin
+mk3FuselageLF.100
+mk3FuselageLF.25
+mk3FuselageLF.50
+mk3FuselageLFO.100
+mk3FuselageLFO.25
+mk3FuselageLFO.50
+mk3FuselageMONO
 

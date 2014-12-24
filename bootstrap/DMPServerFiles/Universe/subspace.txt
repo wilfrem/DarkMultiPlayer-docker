@@ -2,6 +2,6 @@
 #This file can only be edited if the server is stopped.
 #Each variable is on a new line. They are subspaceID, server clock (from DateTime.UtcNow.Ticks), universe time, and subspace speed.
 0
-635541754345205730
+635550406881397780
 100
 1
