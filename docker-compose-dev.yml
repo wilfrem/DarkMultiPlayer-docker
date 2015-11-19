@@ -1,0 +1,10 @@
+ksp-dmp:
+  build: .
+  container_name: ksp-dmp
+  ports:
+  - "6702:6702"
+  volumes:
+  - "./config/:/home/kerman/config"
+  - "./universe:/home/kerman/DMPServer/Universe"
+  - "./logs:/home/kerman/DMPServer/logs"
+  restart: on-failure:3

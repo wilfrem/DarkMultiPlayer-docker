@@ -1,24 +1,32 @@
 DarkMultiPlayer-docker
 ======================
+`Dockerfile`, `docker-compose.yml`, and configuration mapping for [Kerbal Space Program DarkMultiPlayer(DMP) MOD Server](http://d-mp.org).
 
-dockerfile and bootstrap for Kerbal Space Program DarkMultiPlayer(DMP) MOD Server.
+[The mode source is here](https://github.com/godarklight/DarkMultiPlayer)
 
-[original source is here](https://github.com/godarklight/DarkMultiPlayer)
+[The original Dockerfile was forked from wilfrem, here](https://github.com/wilfrem/DarkMultiPlayer-docker) to add some Docker paradigm updates and latest code.
 
-build image
+The new setup has been tested against Docker 1.9.0.
+
+Build the image
 -----------
+Thanks to feats of modern software engineering, you no longer need to build this image yourself. You may pull and run it from docker hub!
 
-move ./dockerfile folder and run this code
-```sh
-docker build -t "your tag" .
-```
+Simply skip to "Run Server"
 
-if you want modify DMP server settings, you can modify files in ./dockerfile/DMPServerApp before building image.
-./dockerfile/DMPServerApp will be included in building process.
+If you're one of those fun users that likes to build things themselves you can use the `dev` docker-compose and run `docker-compose -f docker-compose-dev.yml build ksp-dmp` in this folder.
+Then do `docker-compose -f docker-compose-dev.yml up -d ksp-dmp` to run the server instead.
 
-run server
+
+
+Run Server
 ----
+`docker-compose up -d ksp-dmp`
 
-put ./buotstrap/DMPServerFiles into storage and run ./bootstrap.sh -t "your tag" -v "DMPServerFilesPath"
 
-
+Configuration
+----
+If you want modify DMP server settings, you can modify files in `config/` and then restart the server for the changes to take effect. Don't worry, your universe files are mapped out to `universe/`, so you won't lose your game changes.
+```
+docker-compose restart ksp-dmp
+```
