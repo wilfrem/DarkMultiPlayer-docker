@@ -3,7 +3,7 @@ FROM mono:latest
 # MAINTAINER Kazuki Yasufuku <wilfrem@gmail.com> # Thanks dude!
 MAINTAINER Cristoffer Fairweather <cfairweather@cfairweather.com>
 
-RUN apt-get update && apt-get install wget unzip && apt-get clean
+RUN apt-get update && apt-get install wget unzip sudo && apt-get clean
 
 #add kerman user
 #create home folder
@@ -21,12 +21,17 @@ RUN chown -R kerman:kerman /home/kerman
 WORKDIR /home/kerman/DMPServer
 
 #run as kerman user
-USER kerman
+# USER kerman
+# Run as root and then launch mono as kerman
 
 #expose DMP port
 EXPOSE 6702
 
 VOLUME ["/home/kerman/DMPServer/Universe"]
+COPY docker-entrypoint.sh /docker-entrypoint.sh
+RUN chmod +x /docker-entrypoint.sh
 
-CMD mono /home/kerman/DMPServer/DMPServer.exe
+ENTRYPOINT ["/docker-entrypoint.sh"]
+# CMD mono /home/kerman/DMPServer/DMPServer.exe
+
 

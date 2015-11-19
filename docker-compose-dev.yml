@@ -1,5 +1,5 @@
 ksp-dmp:
-  image: cfairweather/ksp-dmp
+  build: .
   container_name: ksp-dmp
   ports:
   - "6702:6702"
